@@ -14,6 +14,7 @@ class CreateSkripsisTable extends Migration
     public function up()
     {
         Schema::create('skripsis', function (Blueprint $table) {
+            // $table->bigIncrements('id');
             $table->integer('nim');
             $table->string('nama');
             $table->string('judulskripsi');
@@ -30,6 +31,6 @@ class CreateSkripsisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('skripsis');
+        Schema::drop('skripsis');
     }
 }

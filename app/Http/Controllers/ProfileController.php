@@ -8,6 +8,7 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        return view('page.profile');
+        $data['page_title'] = "Profile";
+        return view('page.profile', $data);
     }
 }

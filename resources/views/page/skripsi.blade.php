@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('page_title', 'Skripsi')
+{{-- @section('page_title', 'Skripsi') --}}
 
 @section('content')
     <form action="{{ route('skripsi.insert') }}" method="post">
@@ -12,7 +12,7 @@
                 <input type="text" placeholder="Masukkan Nama Anda" name="nama" id="nama" class="input-form">
             </div>
             <div class="form-group form-judul">
-                <label for="judul" class="judul">Judul</label>
+                <label for="judulskripsi" class="judul">Judul</label>
                 <input type="text" name="judul" placeholder="Masukkan Judul Anda" class="input-form judul" id="judul">
             </div>
             <div class="form-group form-btn">
@@ -21,10 +21,10 @@
             </div>
         </div>
     </form>
-    <table>
+    <table class="tableskripsi">
         <thead>
             <tr>
-                <th style="height: 28px; width: 38px;">No</th>
+                {{-- <th style="height: 28px; width: 38px;">No</th> --}}
                 <th>NIM</th>
                 <th>Nama</th>
                 <th>Judul Skripsi</th>
@@ -32,14 +32,21 @@
             </tr>
         </thead>
         <tbody>
+
+            {{-- <td>{{ $db }}</td>
+            <td>{{ $db->name }}</td>
+            <td>{{ $db->judulskripsi }}</td>
+            <td>{{ $hasilproses }}</td> --}}
             {{-- menampilkan hasil apabila ada plagiarisme --}}
-           {{-- @foreach ($data as $item) 
-               <td></td>
-               <td></td>
-               <td></td>
-               <td></td>
-               <td></td>
-           @endforeach  --}}
+            {{-- @if ($hasilproses <= 50)
+                @foreach ($db as $key=>$res)
+                    <td>{{$key}}</td>
+                    <td>{{$res->nama}}</td>
+                    <td>{{$res->judulskripsi}}</td>
+                    <td></td>
+                @endforeach
+            @else break;
+            @endif --}}
         </tbody>
     </table>
 @endsection
