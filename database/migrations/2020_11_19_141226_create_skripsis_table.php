@@ -15,11 +15,10 @@ class CreateSkripsisTable extends Migration
     {
         Schema::create('skripsis', function (Blueprint $table) {
             // $table->bigIncrements('id');
-            $table->integer('nim');
+            $table->string('nim')->unique();
             $table->string('nama');
             $table->string('judulskripsi');
             $table->timestamps();
-
             $table->primary('nim');
         });
     }

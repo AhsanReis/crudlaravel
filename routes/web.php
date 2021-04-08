@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 //skripsi
 
 Route::get('/', 'SkripsiController@index')->name('skripsi');
-Route::post('skripsi/insert', 'SkripsiController@insert')->name('skripsi.insert');
+// Route::post('/check', 'SkripsiController@mainProcess')->name('skripsi.check');
+Route::post('/action','SkripsiController@gateway')->name('skripsi.gateway');
+// Route::post('skripsi/insert', 'SkripsiController@insert')->name('skripsi.insert');
 
 //profile
 Route::get('profile', 'ProfileController@index')->name('profile');
+Route::post('profile', 'ProfileController@insert')->name('profile.insert');
